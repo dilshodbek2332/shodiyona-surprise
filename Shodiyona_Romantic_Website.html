@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#100711">
+<title>Shodiyona uchun ❤️</title>
+<style>
+:root{--pink:#ff9bc9;--rose:#ef4f91;--cream:#ffe6f1;--gold:#f5cf78}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:#100711;color:#fff;font-family:Georgia,'Times New Roman',serif}
+body{min-height:100svh;overflow:hidden;background:radial-gradient(ellipse at 50% 32%,#54213f 0%,#261022 42%,#100711 78%)}
+#stars,#petals,#glows{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+#stars{z-index:0}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.35;animation:twinkle 2.8s ease-in-out infinite alternate}
+@keyframes twinkle{to{opacity:1;transform:scale(1.8);box-shadow:0 0 8px #fff}}
+#petals{z-index:3}
+.petal{position:absolute;top:-35px;animation:fall linear forwards;filter:drop-shadow(0 0 5px #ff8cbd)}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(650deg);opacity:0}}
+.screen{position:relative;z-index:2;display:none;min-height:100svh;width:100%;padding:calc(30px + env(safe-area-inset-top)) 24px calc(26px + env(safe-area-inset-bottom));align-items:center;justify-content:center;text-align:center;flex-direction:column}
+.screen.active{display:flex;animation:enter .9s ease both}
+@keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.content{width:min(100%,390px);margin:auto}
+.eyebrow{font:600 10px/1.5 Arial,sans-serif;letter-spacing:4px;color:#f5b6d5;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(34px,9vw,47px);line-height:1.12;color:var(--cream);font-weight:normal;margin:15px 0;text-shadow:0 0 24px #ff4b9c88}
+p{max-width:330px;margin:14px auto;color:#f0d9e6;font-size:16px;line-height:1.85}
+.script{font-style:italic;color:#ffc0df}
+.hero-heart{font-size:66px;filter:drop-shadow(0 0 18px #ff4d9d);animation:heartbeat 1.7s ease-in-out infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}15%{transform:scale(1.13)}30%{transform:scale(1)}45%{transform:scale(1.08)}}
+button{appearance:none;border:1px solid #ffc0df;background:linear-gradient(135deg,#f05a9b,#9d285f);color:#fff;border-radius:999px;padding:16px 25px;min-height:52px;font:16px Georgia,serif;box-shadow:0 8px 30px #e83c8c45;cursor:pointer;margin-top:22px;touch-action:manipulation}
+button:active{transform:scale(.97)}
+button:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.note{font:11px Arial,sans-serif;letter-spacing:1.5px;color:#c99ab4;margin-top:25px}
+.rose-art{font-size:75px;filter:drop-shadow(0 0 22px #f04d91);animation:float 3.5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.divider{width:75px;height:1px;background:linear-gradient(90deg,transparent,#f7a9ce,transparent);margin:20px auto}
+.gift-wrap{position:relative;width:150px;height:110px;margin:35px auto 16px;filter:drop-shadow(0 12px 25px #0008);animation:float 3s ease-in-out infinite}
+.gift-base{position:absolute;left:8px;right:8px;bottom:0;height:77px;border-radius:8px 8px 13px 13px;background:linear-gradient(120deg,#9f174f,#5c0d31 70%);border:1px solid #d87b9e}
+.gift-lid{position:absolute;left:0;right:0;top:20px;height:25px;border-radius:7px;background:linear-gradient(120deg,#f08bb5,#a52b5c);border:1px solid #ffd0e4;z-index:2}
+.gift-ribbon{position:absolute;left:66px;top:21px;width:19px;height:88px;background:linear-gradient(90deg,#f8c8db,#d45a8c,#ffe0eb);z-index:3}
+.bow{position:absolute;z-index:4;top:0;left:52px;width:46px;height:27px}
+.bow:before,.bow:after{content:"";position:absolute;width:24px;height:18px;border:5px solid #f8bfd6;border-radius:80% 15% 80% 15%;transform:rotate(25deg)}
+.bow:after{left:22px;transform:scaleX(-1) rotate(25deg)}
+.ring-stage{height:240px;width:min(100%,290px);position:relative;display:grid;place-items:center;margin:5px auto 0}
+.halo{position:absolute;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle,#ffd9a72b 0%,#ff8cbd13 45%,transparent 70%);animation:halo 2.8s ease-in-out infinite alternate}
+@keyframes halo{to{transform:scale(1.14);opacity:.65}}
+.ring-svg{width:205px;height:205px;overflow:visible;filter:drop-shadow(0 0 10px #f4c96f88);animation:ringAppear 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes ringAppear{from{opacity:0;transform:translateY(25px) scale(.55) rotate(-15deg)}to{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+.spark{position:absolute;color:#ffe8ae;font-size:22px;animation:sparkle 1.8s ease-in-out infinite alternate}
+.spark:nth-child(2){top:20px;left:30px}.spark:nth-child(3){top:38px;right:24px;animation-delay:.5s}.spark:nth-child(4){bottom:24px;left:42px;animation-delay:.9s}.spark:nth-child(5){bottom:35px;right:35px;animation-delay:.3s}
+@keyframes sparkle{to{opacity:.25;transform:scale(.55) rotate(35deg)}}
+.final-line{font-size:clamp(23px,6vw,29px);color:#ffd4e8;text-shadow:0 0 18px #f04b9c;margin-top:8px}
+.music{position:fixed;z-index:10;top:calc(12px + env(safe-area-inset-top));right:14px;width:43px;height:43px;min-height:43px;padding:0;margin:0;background:#4d1b3d;border:1px solid #d58caf;font:19px Arial;box-shadow:none}
+@media(max-height:700px){.screen{padding-top:55px;padding-bottom:20px}p{font-size:14px;line-height:1.65;margin:9px auto}.ring-stage{height:190px}.ring-svg{width:170px;height:170px}.hero-heart{font-size:55px}.rose-art{font-size:60px}.gift-wrap{margin:20px auto 10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="stars"></div><div id="petals"></div>
+<button class="music" id="musicBtn" aria-label="Musiqani yoqish yoki o‘chirish" onclick="toggleMusic()">♫</button>
+<audio id="song" src="song.mp3" loop preload="none"></audio>
+
+<section class="screen active" id="s1">
+ <main class="content">
+  <div class="eyebrow">A LITTLE SURPRISE FOR YOU</div>
+  <div class="hero-heart">❤️</div>
+  <h1>Shodiyona...</h1>
+  <p>Bugun sen uchun kichkina, ammo chin yurakdan tayyorlangan bir syurprizim bor.</p>
+  <div class="divider"></div>
+  <p class="script">Bu lahzalarni oxirigacha ko‘rishingni istardim. 🌹</p>
+  <button onclick="next(2)">Syurprizni boshlash ❤️</button>
+  <div class="note">MADE WITH CARE · JUST FOR YOU</div>
+ </main>
+</section>
+
+<section class="screen" id="s2">
+ <main class="content">
+  <div class="eyebrow">A THOUGHT FOR YOU</div>
+  <div class="rose-art">🌹</div>
+  <h1>Ba'zi insonlar...</h1>
+  <p>Hayotimizga kelib, oddiy kunlarni ham unutilmas xotiralarga aylantiradi.</p>
+  <p class="script">Sening tabassuming ham atrofingga o‘zgacha iliqlik ulashadi. ✨</p>
+  <button onclick="next(3)">Davom etish 🌷</button>
+ </main>
+</section>
+
+<section class="screen" id="s3">
+ <main class="content">
+  <div class="eyebrow">FROM THE HEART</div>
+  <div class="hero-heart">💗</div>
+  <h1>Shodiyona,</h1>
+  <p>Har bir kuning quvonchga, qalbing xotirjamlikka, orzularing esa go‘zal natijalarga to‘lsin.</p>
+  <p class="script">Doimo o‘zingdek samimiy va betakror bo‘lib qol. 🌸</p>
+  <button onclick="next(4)">Senga yana bir narsa bor 💌</button>
+ </main>
+</section>
+
+<section class="screen" id="s4">
+ <main class="content">
+  <div class="eyebrow">A LITTLE GIFT</div>
+  <h1>Bu qutida...</h1>
+  <p>Sen uchun alohida tayyorlangan kichkina syurpriz yashiringan.</p>
+  <div class="gift-wrap" aria-label="Qizil sovg‘a qutichasi">
+   <div class="gift-base"></div><div class="gift-ribbon"></div><div class="gift-lid"></div><div class="bow"></div>
+  </div>
+  <p class="script">Tayyor bo‘lsang, ochamiz. ❤️</p>
+  <button onclick="openGift()">Qutichani ochish 💍</button>
+ </main>
+</section>
+
+<section class="screen" id="s5">
+ <main class="content">
+  <div class="eyebrow">A SYMBOLIC LITTLE SURPRISE</div>
+  <div class="ring-stage">
+   <div class="halo"></div>
+   <span class="spark">✦</span><span class="spark">✧</span><span class="spark">✧</span><span class="spark">✦</span>
+   <svg class="ring-svg" viewBox="0 0 240 240" role="img" aria-label="Yaltirab turgan olmosli oltin uzuk">
+    <defs>
+     <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0b0"/><stop offset=".28" stop-color="#bd812c"/><stop offset=".55" stop-color="#ffe6a0"/><stop offset=".8" stop-color="#c38a36"/><stop offset="1" stop-color="#fff0bd"/>
+     </linearGradient>
+     <linearGradient id="gem" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff"/><stop offset=".35" stop-color="#d8f2ff"/><stop offset=".7" stop-color="#91c9ed"/><stop offset="1" stop-color="#fff"/>
+     </linearGradient>
+     <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <!-- Ring band -->
+    <ellipse cx="120" cy="151" rx="66" ry="39" fill="none" stroke="#8e5c20" stroke-width="17"/>
+    <ellipse cx="120" cy="147" rx="66" ry="39" fill="none" stroke="url(#gold)" stroke-width="13"/>
+    <path d="M63 130 Q120 92 177 130" fill="none" stroke="#fff0b0" stroke-width="3" opacity=".9"/>
+    <!-- Setting -->
+    <path d="M101 116 L108 92 L132 92 L139 116" fill="none" stroke="url(#gold)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M105 96 L120 78 L135 96" fill="none" stroke="url(#gold)" stroke-width="5"/>
+    <!-- Diamond -->
+    <g filter="url(#glow)">
+     <path d="M94 72 L107 48 L133 48 L146 72 L120 104 Z" fill="url(#gem)" stroke="#fff" stroke-width="2"/>
+     <path d="M94 72 L120 104 L107 48 Z" fill="#d6efff" opacity=".8"/>
+     <path d="M146 72 L120 104 L133 48 Z" fill="#a9d8f5" opacity=".8"/>
+     <path d="M107 48 L120 72 L133 48" fill="none" stroke="#fff" stroke-width="2"/>
+     <path d="M94 72 L146 72 M120 72 L120 104" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </g>
+    <path d="M78 112 L72 104 M162 112 L168 104" stroke="#ffe8a8" stroke-width="3" stroke-linecap="round"/>
+   </svg>
+  </div>
+  <h1>Shodiyona ❤️</h1>
+  <div class="final-line">Bu syurpriz faqat sen uchun</div>
+  <p>Bu kichkina sovg‘a qalbimdagi samimiy tilaklarimning bir belgisi. Doimo baxtli bo‘l! 🌹</p>
+  <div class="note">WITH LOVE · JUST FOR YOU</div>
+  <button onclick="location.reload()">Yana bir bor ko‘rish ↻</button>
+ </main>
+</section>
+
+<script>
+const stars=document.getElementById('stars');
+for(let i=0;i<95;i++){
+ const el=document.createElement('i');el.className='star';
+ el.style.left=Math.random()*100+'%';el.style.top=Math.random()*100+'%';
+ el.style.animationDelay=(Math.random()*3)+'s';
+ el.style.opacity=(.2+Math.random()*.6);
+ stars.appendChild(el);
+}
+function createPetal(){
+ const el=document.createElement('span');el.className='petal';
+ el.textContent=['🌸','🌹','💗','✨'][Math.floor(Math.random()*4)];
+ el.style.left=Math.random()*100+'vw';
+ el.style.fontSize=(13+Math.random()*16)+'px';
+ el.style.animationDuration=(6+Math.random()*6)+'s';
+ el.style.setProperty('--drift',(Math.random()*150-75)+'px');
+ document.getElementById('petals').appendChild(el);
+ setTimeout(()=>el.remove(),12500);
+}
+setInterval(createPetal,650);
+function next(n){
+ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+ document.getElementById('s'+n).classList.add('active');
+}
+function openGift(){
+ next(5);
+ for(let i=0;i<35;i++)setTimeout(createPetal,i*85);
+}
+let playing=false;
+async function toggleMusic(){
+ const song=document.getElementById('song'),btn=document.getElementById('musicBtn');
+ if(!playing){
+  try{await song.play();playing=true;btn.textContent='Ⅱ';}
+  catch(e){alert('Musiqa uchun romantic-site papkasiga song.mp3 faylini qo‘shing.');}
+ }else{song.pause();playing=false;btn.textContent='♫';}
+}
+</script>
+</body>
+</html>
